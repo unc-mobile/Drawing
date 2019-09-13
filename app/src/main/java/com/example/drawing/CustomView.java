@@ -50,6 +50,11 @@ public class CustomView extends View {
         canvas.drawColor(Color.WHITE);
         canvas.drawCircle(mX, mY, mRadius, mBallPaint);
 
+        String text = "bouncing ball";
+        float width = mBallPaint.measureText(text);
+        canvas.drawText(text, (getWidth() - width) / 2,
+                (getHeight() - mBallPaint.getTextSize()) / 2, mBallPaint);
+
         invalidate();
     }
 
